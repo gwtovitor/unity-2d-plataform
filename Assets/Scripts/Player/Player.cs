@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     [Header("References")]
     public Rigidbody2D myRigidBody;
     public string groundTag;
+    public string playerDeathTrigger = "Death";
 
     [Header("SpeedSetup")]
     public Vector2 friction = new Vector2(0.1f, 0);
@@ -130,6 +131,7 @@ public class Player : MonoBehaviour
     {
         if (collision.collider.CompareTag(groundTag))
         {
+
             animator.SetBool(boolFalling, true);
 
         }
@@ -139,5 +141,9 @@ public class Player : MonoBehaviour
     {
         // myRigidBody.transform.DOScaleY(impactScaleY, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
         // myRigidBody.transform.DOScaleX(impactScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+    }
+
+    public void HandlePlayerDeath(){
+        animator.SetTrigger(playerDeathTrigger);
     }
 }
