@@ -143,7 +143,8 @@ public class Player : MonoBehaviour
         // myRigidBody.transform.DOScaleX(impactScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
     }
 
-    public void HandlePlayerDeath(){
+    public void HandlePlayerDeath()
+    {
         animator.SetTrigger(playerDeathTrigger);
     }
 }
