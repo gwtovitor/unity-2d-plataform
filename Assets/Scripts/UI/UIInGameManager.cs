@@ -1,14 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
 using Ebac.Core.Singleton;
+using TMPro;
 
-public class UIInGameManager : Singleton<ItemManager>
+public class UIInGameManager : Singleton<UIInGameManager>
 {
     public TMP_Text uiTextCoins;
+    public TMP_Text uiTextLifes;
 
-    public static void UpdateTextCoins(string s){
+    public static void UpdateTextCoins(string s)
+    {
         Instance.uiTextCoins.text = s;
+    }
+    public static void UpdateTextLifes(string s)
+    {
+        Instance.uiTextLifes.text = s;
     }
 }
